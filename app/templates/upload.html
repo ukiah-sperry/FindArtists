@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find artist you like at your next festival!</title>
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form
+        id="upload-form"
+        method="post"
+        action="{{ url_for('upload_lineup') }}"
+        enctype="multipart/form-data"
+    >
+    <!-- hidden file input -->
+    <input
+        type="file"
+        name="file"
+        id="file-input"
+        style="display: none;"
+        accept="image/*"
+        required
+    />
+
+        <!-- styled label acts like a button -->
+        <label for="file-input" class="btn">Choose Image…</label>
+        <!-- once a file is chosen, enable the real submit button -->
+        <button type="submit" id="upload-btn" disabled>Upload</button>
+    </form>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
